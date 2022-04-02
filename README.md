@@ -1,2 +1,2 @@
 # Medical-Imaging
-Applying CNNs to solve healthcare problems
+Solving healthcare problems usign CNNs.
