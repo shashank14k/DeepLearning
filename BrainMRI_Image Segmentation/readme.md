@@ -21,13 +21,21 @@ To carry image segmentation, I have trained a UNet like CNN from scratch. UNet i
 ### Attention block
 ![Attention block](https://user-images.githubusercontent.com/98767932/161028491-3fb670d8-46ec-4585-8096-02c908a0b0cc.png)
 
-# Loss functions
+# Loss functions and metrics
 I have used two loss functions to train the models, weighted cross entropy and dice loss.
 ### Weighted Cross Entropy
 It is similar to binary cross entropy but has weight assigned to each class. The dataset for biomedical tasks is generally highly imbalanced. There are limited images with tumor and even in those images, the majority of the area does not contain tumor. Hence, the model trained on binary cross entropy could end up just giving outputs of black background (0 pixels) as that too would end up in a pretty high score. Hence, I calculated the average proportion of tumor region in training masks and accordingly weighted the two classes (tumor and non tumor)
 
 ### Dice loss
-The dice coefficient in mathematical terms is the harmonic mean of recall and precision. Essentially, it calculates the common area between the predicted and the original mask images. The negative of this coefficient can be used as loss function. You can read more about it [here](https://www.jeremyjordan.me/semantic-segmentation/#loss)
+The dice coefficient is calculated as 2 * area of overlap between predicted and real image divided by the total number of pixels in both images. It is the harmonic mean of precision and recall. A higher dice coefficient implies better segmentation, and hence its negative can be used as loss function. You can read more about it [here](https://www.jeremyjordan.me/semantic-segmentation/#loss)
+
+![image](https://user-images.githubusercontent.com/98767932/161381182-d31f4909-5817-4215-ba96-ca1444a3e796.png)
+
+### IOU
+IOU and dice-loss are correlated. IOU is the overlapping area between two images divided by the union of their areas. I have used IOU only as an evaluation metric. I have compared the models trained on the above loss functions using IOU.
+
+![image](https://user-images.githubusercontent.com/98767932/161381380-2119e500-8e7c-4243-add9-9c65fa755950.png)
+
 
 # Model Performance
 
