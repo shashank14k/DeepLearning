@@ -13,10 +13,16 @@ While preparing the training, testing, and validation sets, I ensured that separ
 
 ### Tackling data imbalance
 As is evident from the first image, the dataset is extremely imbalanced. Besides 'No disease', all other classes have an extremely small percentage of positive samples. The highest is for Infiltration (around 18%). To account for this imabalance, I used weighted cross entropy as loss function. The idea with it is to ensure that each class has an equal contribution of positive and negative samples.
-![image](https://user-images.githubusercontent.com/98767932/161378610-357c8f85-19d2-47e2-b9d0-bad2a7c1d291.png)
+![image](https://user-images.githubusercontent.com/98767932/161379040-278af470-b165-4f34-9865-a5168855d69f.png)
+
+
 This can be accomplished easily by:
-![image](https://user-images.githubusercontent.com/98767932/161378646-534015d0-1d8c-419f-b34e-9085ee866f9c.png)
+
+![image](https://user-images.githubusercontent.com/98767932/161379030-24913683-6f51-42fc-9145-df0755d49f18.png)
+
+
 Hence, the final loss function is:
+
 ![image](https://user-images.githubusercontent.com/98767932/161378966-7793cc4c-00cd-4e7e-9aa7-e93a3434d1a1.png)
 
 
