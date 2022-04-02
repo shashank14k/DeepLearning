@@ -2,7 +2,10 @@ The aim of this project is to use convolutional neural networks (CNNs) for medic
 on MRI scans.
 
 # Data
-Please refer the data section
+The training data can be obtained from here (https://www.kaggle.com/datasets/mateuszbuda/lgg-mri-segmentation). It consists of image and mask pairs from 110 patients. Image: MRI scans Mask: Binary pixel image (only 0 and 1) separating the tumor region(value=1) from the non-tumor region(value=0).
+![image](https://user-images.githubusercontent.com/98767932/161374388-7499b71a-7373-4149-8a02-4be9c18f217b.png)
+
+
 
 # Image Segmentation
 Image segmentation entails differentiating different components in an image. For our purpose, for instance, we need to differentiate between tumor and other parts of
