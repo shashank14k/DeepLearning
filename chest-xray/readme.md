@@ -17,7 +17,8 @@ As is evident from the first image, the dataset is extremely imbalanced. Besides
 This can be accomplished easily by:
 ![image](https://user-images.githubusercontent.com/98767932/161378646-534015d0-1d8c-419f-b34e-9085ee866f9c.png)
 Hence, the final loss function is:
-![image](https://user-images.githubusercontent.com/98767932/161378788-10ce51a4-dd0c-4039-8700-de9aa5d095b0.png)
+![image](https://user-images.githubusercontent.com/98767932/161378966-7793cc4c-00cd-4e7e-9aa7-e93a3434d1a1.png)
+
 
 # MODEL
 For modeling, I have used DenseNet with pre-trained 'imagenet' weights. I stacked a GlobalAveragePooling layer, and a dense layer on top of Densenet. Only the last block of DenseNet and the additional two layers were kept as trainable.
