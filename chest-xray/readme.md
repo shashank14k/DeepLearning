@@ -16,7 +16,7 @@ As is evident from the first image, the dataset is extremely imbalanced. Besides
 ![image](https://user-images.githubusercontent.com/98767932/161379040-278af470-b165-4f34-9865-a5168855d69f.png)
 
 
-This can be accomplished easily by:
+This can be easily accomplished by:
 
 ![image](https://user-images.githubusercontent.com/98767932/161379030-24913683-6f51-42fc-9145-df0755d49f18.png)
 
