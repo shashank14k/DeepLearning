@@ -41,7 +41,7 @@ For modeling, I have used DenseNet with pre-trained 'imagenet' weights. I stacke
 
 #### ROC-AUC score
 
-Besides Hernia, the classifier has a poor roc-auc score for all diseases. For diseases with roc-auc <=0.5, the classifier is useless
+Besides Hernia, the classifier has a poor roc-auc score for all diseases. It should also be noted that Hernia has a very small sample space. For diseases with roc-auc <=0.5, the classifier is useless
 
 ![image](https://user-images.githubusercontent.com/98767932/161426496-54af8a92-590c-46bb-9d6f-97fc87560d01.png)
 
