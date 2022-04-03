@@ -27,6 +27,19 @@ Hence, the final loss function is:
 
 
 # MODEL
-For modeling, I have used DenseNet with pre-trained 'imagenet' weights. I stacked a GlobalAveragePooling layer, and a dense layer on top of Densenet. Only the last block of DenseNet and the additional two layers were kept as trainable.
+For modeling, I have used DenseNet with pre-trained 'imagenet' weights. I stacked a GlobalAveragePooling layer, and a dense layer on top of Densenet. Only the last two blocks of DenseNet and the additional two layers were kept as trainable.
+
+# Evaluation
+
+1. As this is a multi-classification and multi-label problem (a single patient could be suffering from multiple diseases), it's difficult to create a reliable working model. 
+2. The training set had more than 78000 images, but I trained the model for only 10 epochs of 400 iterations and 8 batch length. With more training, the model performance should likely improve.
+3. I also will experiment with different trainable layers and with different model architectures.
+
+####ROC curve
+![image](https://user-images.githubusercontent.com/98767932/161426212-814e0fd1-fd71-4e20-8115-2701f31cbaac.png)
+
+####ROC-AUC score
+![image](https://user-images.githubusercontent.com/98767932/161426496-54af8a92-590c-46bb-9d6f-97fc87560d01.png)
+
 
 
