@@ -35,11 +35,13 @@ For modeling, I have used DenseNet with pre-trained 'imagenet' weights. I stacke
 2. The training set had more than 78000 images, but I trained the model for only 10 epochs of 400 iterations and 8 batch length. With more training, the model performance should likely improve.
 3. I also will experiment with different trainable layers and with different model architectures.
 
-####ROC curve
+#### ROC curve
 
 ![image](https://user-images.githubusercontent.com/98767932/161426212-814e0fd1-fd71-4e20-8115-2701f31cbaac.png)
 
-####ROC-AUC score
+#### ROC-AUC score
+
+Besides Hernia, the classifier has a poor roc-auc score for all diseases. For diseases with roc-auc <=0.5, the classifier is useless
 
 ![image](https://user-images.githubusercontent.com/98767932/161426496-54af8a92-590c-46bb-9d6f-97fc87560d01.png)
 
