@@ -68,7 +68,9 @@ IOU score on test set: 0.6002
 
 ![image](https://user-images.githubusercontent.com/98767932/161031237-9421f52b-7cf5-4271-a0ff-8bb23f017825.png)
 
-For more detailed information, I urge you to go through my Kaggle notebooks.
+# CONCLUSION
+
+The IOU scores and image plots from the three models show that attention UNet outperformed the other two models. I trained it for 25 epochs and there weren't any signs of overfitting in validation loss curves. Hence, training for more epochs will likely improve the performance. For more detailed information, I urge you to go through my Kaggle notebooks.
 
 ###### [UNet](https://www.kaggle.com/code/shashank069/brainmri-image-segmentation-attentionunet/notebook?scriptVersionId=91727533)
 ###### [Attention UNet](https://www.kaggle.com/code/shashank069/brainmri-image-segmentation-attentionunet/notebook?scriptVersionId=91727533)
