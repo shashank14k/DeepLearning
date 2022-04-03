@@ -2,18 +2,20 @@ The aim of this project is to use convolutional neural networks (CNNs) for medic
 on MRI scans.
 
 # Data
-The training data can be obtained from here (https://www.kaggle.com/datasets/mateuszbuda/lgg-mri-segmentation). It consists of image and mask pairs from 110 patients. Image: MRI scans Mask: Binary pixel image (only 0 and 1) separating the tumor region(value=1) from the non-tumor region(value=0).
+The training data can be obtained from here (https://www.kaggle.com/datasets/mateuszbuda/lgg-mri-segmentation). It consists of image and mask pairs from 110 patients. 
+
+Image: MRI scans 
+Mask: Binary pixel image (only 0 and 1) separating the tumor region(value=1) from the non-tumor region(value=0).
 ![image](https://user-images.githubusercontent.com/98767932/161374388-7499b71a-7373-4149-8a02-4be9c18f217b.png)
 
 
 
 # Image Segmentation
-Image segmentation entails differentiating different components in an image. For our purpose, for instance, we need to differentiate between tumor and other parts of
-the brain. Hence, the model will be able to identify tumor and non-tumor regions in MRI scans.
+Image segmentation is the process differentiating different components in an image. This project, for instance, focuses on differentiating between tumor and non-tumor regions in MRI scans.
 ![image](https://user-images.githubusercontent.com/98767932/161025979-5ffd3ddf-56fe-4898-bc7a-e0dddfdb5da8.png)
 
 # Model Architectures
-To carry image segmentation, I have trained a UNet like CNN from scratch. UNet is a CNN used for biomedical image segmentation. You can find more information regarding it [here](https://arxiv.org/abs/1505.04597). In summary, though, UNet, like any other classification nerual network, first identifies whether a tumor is present in the passed image. While doing so, it also memorizes the tumor locations and uses this information to output a final image differntiating tumor from non-tumor region. An improvement over this is Attnetion UNet. The idea with attention, like in NLP, is to give more emphasis to important regions in the image. Such a network would give more weightage to areas with tumor and consequently output a better representation of the image. The architecture of Attention UNet is quite similar to that of traditional UNet with slight modifications. It includes and attention block. You can read more about it [here](https://arxiv.org/abs/1804.03999)
+To carry image segmentation, I have trained a UNet like CNN from scratch. UNet is a CNN used for biomedical image segmentation. You can find more information regarding it [here](https://arxiv.org/abs/1505.04597). In summary, UNet, like any other classification nerual network, first searches for presence of tumor in the passed image. While doing so, it also memorizes information about the tumor's location (if present) to later construct a final image differentiating tumor and non-tumor regions. An improvement over this is Attnetion UNet. The idea with attention, like in NLP, is to emphasise more on important regions in images. Such a network would give more weightage to areas with tumor and consequently output a better representation of the image. The architecture of Attention UNet is quite similar to that of traditional UNet with slight modifications. It includes an attention block. You can read more about it [here](https://arxiv.org/abs/1804.03999)
 ### UNet
 ![UNet](https://user-images.githubusercontent.com/98767932/161028294-9be7fd3d-7767-4649-ab97-aeb94c8b1b03.png)
 ### Attention UNet
@@ -42,12 +44,15 @@ IOU and dice-loss are correlated. IOU is the overlapping area between two images
 ### UNet
 I trained the UNet network using both loss functions, and the model trained using dice loss performed better.
 ##### Dice loss results
+IOU score on test set: 0.5160
 ![image](https://user-images.githubusercontent.com/98767932/161030810-5f6ff91e-deea-4cfb-a3f0-08e7e039a5ff.png)
 ##### Weighted cross entropy results
+IOU score on test set: 0.3414
 ![image](https://user-images.githubusercontent.com/98767932/161030921-af93b4e2-17e2-46d7-b32b-1ed60e40ac7e.png)
 
 ### Attention UNet
 I trained the attention UNet network only using Dice loss, and it outperformed the traditional UNet network. Although the difference was minor, I belive the attention UNet will give much better results when trained for more epochs.
+IOU score on test set: 0.6002
 ![image](https://user-images.githubusercontent.com/98767932/161031237-9421f52b-7cf5-4271-a0ff-8bb23f017825.png)
 
 For more detailed information, I urge you to go through my Kaggle notebooks.
