@@ -27,7 +27,7 @@ Hence, the final loss function is:
 
 
 # MODEL
-For modeling, I have used DenseNet with pre-trained 'imagenet' weights. I stacked a GlobalAveragePooling layer, and a dense layer on top of Densenet. Only the last two blocks of DenseNet and the additional two layers were kept as trainable.
+For modeling, I used DenseNet with pre-trained 'imagenet' weights. I stacked a GlobalAveragePooling layer, and a dense layer on top of Densenet. Only the last two blocks of DenseNet and the additional two layers were kept as trainable. I also created a DenseNet like network from scratch (find it in the repository), but for obvious reasons, it performed worse than pre-trained DenseNet.
 
 # Evaluation
 
