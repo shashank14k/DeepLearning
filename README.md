@@ -1,2 +1,1 @@
-# Medical-Imaging
-Solving healthcare problems usign CNNs.
+Tinkering with interesting deep learning algorithms
